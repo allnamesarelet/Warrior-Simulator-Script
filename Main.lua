@@ -139,10 +139,10 @@ local function CJBS_fake_script() -- ScreenGui.Core
 		
 		repeat
 			local a = game:GetService("Players").LocalPlayer.PlayerGui.Main.HomePage.Left.Button.Rebirth.Process
-	
-			if string.len(a.Text) == 4 and game:GetService("Players").LocalPlayer.leaderstats["\240\159\151\161\239\184\143 Level"].Value == 5 * tonumber(game:GetService("Players").LocalPlayer.PlayerGui.Main.Func.Rebirth.Frame.Main.CurrentRebirth.Text) then 
+				
+			if string.len(a.Text) == 4 and game:GetService("Players").LocalPlayer.leaderstats["\240\159\151\161\239\184\143 Level"].Value >= 5 * tonumber(game:GetService("Players").LocalPlayer.PlayerGui.Main.Func.Rebirth.Frame.Main.CurrentRebirth.Text) then 
 				game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Profile"):WaitForChild("RebirthRequest"):InvokeServer()
-	
+				print("ran remote")
 			end
 			
 			task.wait(.5)
