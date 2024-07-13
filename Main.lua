@@ -33,7 +33,7 @@ Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Title.BorderSizePixel = 0
 Title.Size = UDim2.new(0, 200, 0, 50)
 Title.Font = Enum.Font.Unknown
-Title.Text = "Warrior Simulator"
+Title.Text = "Steal Time Simulator"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextScaled = true
 Title.TextSize = 14.000
@@ -192,39 +192,33 @@ local function CJBS_fake_script() -- ScreenGui.Core
 		autoPointsEnabled = not autoPointsEnabled
 	
 		repeat
-			for i = 1,4,1 do
-				if i == 1 then
-					local args = {
-						[1] = "Damage", -- or "Speed", "Defense", "Luck"
-						[2] = 1
-					}
-	
-					game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Profile"):WaitForChild("AddPoint"):FireServer(unpack(args))
-				elseif i == 2 then
-					local args = {
-						[1] = "Speed", -- or "Speed", "Defense", "Luck"
-						[2] = 1
-					}
-	
-					game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Profile"):WaitForChild("AddPoint"):FireServer(unpack(args))
-				elseif i == 3 then
-					local args = {
-						[1] = "Defense", -- or "Speed", "Defense", "Luck"
-						[2] = 1
-					}
-	
-					game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Profile"):WaitForChild("AddPoint"):FireServer(unpack(args))
-				elseif i == 4 then
-					local args = {
-						[1] = "Luck", -- or "Speed", "Defense", "Luck"
-						[2] = 1
-					}
-	
-					game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Profile"):WaitForChild("AddPoint"):FireServer(unpack(args))
-					
-				end
-			end
-	
+			local args = {
+				[1] = "Speed", -- or "Speed", "Defense", "Luck"
+				[2] = 1
+			}
+
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Profile"):WaitForChild("AddPoint"):FireServer(unpack(args))
+			
+			local args2 = {
+				[1] = "Damage", -- or "Speed", "Defense", "Luck"
+				[2] = 1
+			}
+
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Profile"):WaitForChild("AddPoint"):FireServer(unpack(args))
+			
+			local args3 = {
+				[1] = "Defense", -- or "Speed", "Defense", "Luck"
+				[2] = 1
+			}
+
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Profile"):WaitForChild("AddPoint"):FireServer(unpack(args))
+			
+			local args4 = {
+				[1] = "Luck", -- or "Speed", "Defense", "Luck"
+				[2] = 1
+			}
+
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Profile"):WaitForChild("AddPoint"):FireServer(unpack(args))	
 			task.wait(3)
 		until autoPointsEnabled == false
 	end)
